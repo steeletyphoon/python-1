@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+import colors as c
+import random
+import time
+
+print(c.clear+ c.yellow + '''
+Mmmmmmm, multiplication tables.
+''' + c.reset)
+
+number = input(c.red + 'WHY WOULD YOU ASK ME MATH!!! Fine, put in your number: ')
+print(c.orange + 'Ok, here are the ' + number + c.orange + ' multiplication tables.' + c.reset)
+
+for count in range(12,0,-1):
+    print(str(count) + ' x ' + number, end=' = ')
+    print(int(number) * count)
+    
