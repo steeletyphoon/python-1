@@ -22,7 +22,7 @@ def die():
     exit()
 
 def live():
-    print('Right, off you go then.')
+    print(c.yellow + 'Right, off you go then.')
 
 
 name = prompt(c.cyan + 'What is your name?')
@@ -36,15 +36,17 @@ if name in ['lancelot', 'galahad']:
 
 elif name == 'robin':
     capital = prompt(c.cyan + 'What is the Capital of Assryia?')
-    if 'dont' in capital:
-        die()
-    live()
-elif name == 'arthur':
-    swallow = prompt('What is the air speed velocity of an unladen swallow?')
-    if answer in ['african', 'european']:
+    if 'assur' in capital:
         live()
     else:
         die()
+
+elif name == 'arthur':
+    swallow = prompt(c.cyan + 'What is the air speed velocity of an unladen swallow?')
+    if swallow in ['african', 'european']:
+        print(c.orange + 'Bridgekeeper flies off the cliff.')
+    else:
+        die()
 else:
-    pass # everyone else
+    live()
 
