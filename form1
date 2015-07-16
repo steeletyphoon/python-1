@@ -20,11 +20,11 @@ exlposion and I was consumed in the wave of destruction.
 '''
 
 words = {
-    "place" : {},
-    "noun" : {},
-    "animal" : {},
-    "color" : {},
-    "object" : {}
+    "place" : None,
+    "noun" : None,
+    "animal" : None,
+    "color" : None,
+    "object" : None
 }
 
 print(c.clear + c.blue + '''

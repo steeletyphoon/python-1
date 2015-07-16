@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+import colors as c
+import time
+import random
+from utils import ask
+
+text = '''Creepy in your life...
+
+I slowly {form of travel} into the room. There was {liquid} all over the wall.
+It was clear that a {species} had been through here. I turned around and saw it's
+big {body feature}. I pulled out a/an {object} and started swinging madly.
+It did nothing. My funeral was held at the {place} and it was lovely.
+'''
+
+title = text.splitlines()[0]
+
+words = {
+    "form of travel" : None,
+    "liquid" : None,
+    "species" : None,
+    "body feature" : None,
+    "object" : None,
+    "place" : None
+}
+
+for key in words:
+    words[key] = c.magenta + ask(key.rstrip('0123456789') + ': ') + c.reset
+
+print(c.clear + text.format(**words))
