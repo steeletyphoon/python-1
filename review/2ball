@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+import random
+import colors as c
+
+print(c.clear)
+print(c.base3 + 'Welcome to eightball!')
+
+answers = [
+'yes',
+'no',
+'maybe'
+]
+
+while True:
+    question = input('> ')
+    if 'bye' in question:
+        exit()
+    elif 'love' in question:
+        print(c.yellow + 'No you are a disgrace to feces. How could anyone even like you or you like someone else. You disgust me.')
+    answer = random.choice(answers)
+    print(answer)

@@ -1,2 +1,32 @@
 #!/usr/bin/env python3
+import colors as c
+import random
+import time
+from utils import ask
 
+print(c.blue + "Welcome to madlibs!")
+
+text = c.magenta + '''
+There once was a {noun} and it ate a small {animal}. Which gave this {noun} magical powers.
+This power was the power to {power}. And with this new found power the {noun} devored all of the
+small children in the {place} and the world was a better place.
+'''
+
+words = {
+"noun" : None,
+"animal" : None,
+"power" : None,
+"place" : None
+}
+
+print(c.clear + c.blue + '''
+Welcome to Madlibs. Enter your answers.
+''' + c.reset)
+
+answers = {}
+for key in words:
+    prompt = key
+    answer = ask("Enter " + prompt + ": ")
+    answers[key] = answer
+
+print(text.format(**answers))

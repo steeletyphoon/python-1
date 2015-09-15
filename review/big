@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+import colors as c
+import time
+import random
+
+print(c.green + '''
+Who would cross the bridge of death must answer these questions three
+'Ere the other side they see.
+''' + c.reset)
+
+def prompt(question):
+    print(question)
+    answer = input('>' + c.blue)
+    answer = answer.lower().strip()
+    print(c.reset)
+    return answer
+
+def die():
+  print(c.red + 'Thou art cast into the gourge of eternal peril!')
+  exit()
+
+def live():
+  print(c.yellow + 'Right, off you go then.')
+
+name = prompt(c.cyan + 'What is your name?')
+quest = prompt(c.cyan + 'What is your quest?')
+
+if name in {'lancelot', 'galahad'}:
+  color = prompt(c.cyan + 'What is your favorite color?')
+  if 'no' in color:
+    die()
+  live()
+
+elif name == 'robin':
+    capital = prompt(c.cyan + 'What is the Capital of Assryia?')
+    if 'assur' in capital:
+        live()
+    else:
+        die()
+
+elif name == 'arthur':
+    swallow = prompt(c.cyan + 'What is the air speed velocity of an unladen swallow?')
+    if swallow in {'african', 'european'}:
+        print(c.orange + 'Bridgekeeper files off the cliff.')
+    else:
+        die()
+else:
+    live()
